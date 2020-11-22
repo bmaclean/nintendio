@@ -36,9 +36,6 @@ export default function CharacterTile({
       <div className="flex items-center w-full pb-2">
         <img
           src={`/thumbnails/${character.thumbnail || 'smash.png'}`}
-          width={42}
-          height={42}
-          // layout="fixed"
           className="rounded-full h-10 w-10"
         />
         <span className="pl-4 overflow-ellipsis overflow-hidden">

@@ -5,8 +5,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Nintendio | {Component.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href="/thumbnails/smash.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
