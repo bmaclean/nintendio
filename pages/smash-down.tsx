@@ -3,15 +3,24 @@ import { GetStaticProps } from 'next';
 import smashCharacters from '../assets/characters.json';
 import { SmashCharacter } from '../types/SmashCharacter';
 import { CharacterTile } from '../components';
+import Button from '../components/Button';
+import shuffle from '../utils/shuffle';
 
 interface SmashDownPageProps {
   characters: SmashCharacter[];
 }
 
-type CharacterReducerAction = {
+type UpdateAction = {
   type: 'UPDATE_CHARACTER';
-  character?: SmashCharacter;
+  character: SmashCharacter;
 };
+
+type UpdateAllAction = {
+  type: 'UPDATE_CHARACTERS';
+  characters: SmashCharacter[];
+};
+
+type CharacterReducerAction = UpdateAction | UpdateAllAction;
 
 function charactersReducer(
   state: SmashCharacter[],
@@ -22,6 +31,8 @@ function charactersReducer(
       return state.map((oldChar) =>
         oldChar.id === action.character.id ? action.character : oldChar
       );
+    case 'UPDATE_CHARACTERS':
+      return action.characters;
     default:
       return state;
   }
@@ -32,13 +43,33 @@ export default function SmashDownPage({
 }: SmashDownPageProps): JSX.Element {
   const [state, dispatch] = useReducer(charactersReducer, characters);
 
+  function randomize(n?: number) {
+    if (typeof n === 'undefined') {
+      dispatch({ type: 'UPDATE_CHARACTERS', characters });
+      return;
+    }
+
+    const randomizedCharacters = shuffle(
+      characters.filter((c) => !c.disabled)
+    ).slice(0, n);
+    dispatch({ type: 'UPDATE_CHARACTERS', characters: randomizedCharacters });
+  }
+
   return (
-    <div className="flex flex-col justify-center items-center w-screen bg-gradient-to-r from-blue-100 to-blue-200 pb-16">
+    <div className="flex flex-col justify-center items-center w-screen bg-gradient-to-r from-blue-100 to-blue-200 pb-16 min-h-screen">
       <div className="flex items-center justify-center h-44 flex-col">
         <h1 className="font-header text-7xl text-blue-900">Smash Down</h1>
         <hr className="border-blue-900 w-24" />
       </div>
-      <div className="flex flex-row max-w-6xl flex-wrap pl-4">
+      <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full mb-8">
+        <Button onClick={() => randomize(3)}>3 rounds</Button>
+        <Button onClick={() => randomize(6)}>6 rounds</Button>
+        <Button onClick={() => randomize(9)}>9 rounds</Button>
+        <Button onClick={() => randomize(15)}>15 rounds</Button>
+        <Button onClick={() => randomize(21)}>21 rounds</Button>
+        <Button onClick={() => randomize()}>Max rounds</Button>
+      </div>
+      <div className="flex flex-row flex-grow max-w-6xl flex-wrap pl-4">
         {state.map((character) => (
           <CharacterTile
             key={character.id}
