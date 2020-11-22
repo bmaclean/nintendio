@@ -57,6 +57,8 @@ export default function SmashDownPage({
   );
 }
 
+SmashDownPage.title = 'Smash Down';
+
 export const getStaticProps: GetStaticProps = async () =>
   // TODO: find an API that works
   // const res = await fetch('http://smashdb.me/api/characters')
