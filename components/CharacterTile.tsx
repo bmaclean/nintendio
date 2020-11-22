@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import { HTMLAttributes, useState } from 'react';
 import { SmashCharacter } from '../types/SmashCharacter';
 
@@ -35,12 +34,12 @@ export default function CharacterTile({
       {...props}
     >
       <div className="flex items-center w-full pb-2">
-        <Image
+        <img
           src={`/thumbnails/${character.thumbnail || 'smash.png'}`}
           width={42}
           height={42}
-          layout="fixed"
-          className="rounded-full"
+          // layout="fixed"
+          className="rounded-full h-10 w-10"
         />
         <span className="pl-4 overflow-ellipsis overflow-hidden">
           {character.name}
