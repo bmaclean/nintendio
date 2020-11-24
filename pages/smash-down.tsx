@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { GetStaticProps } from 'next';
 import smashCharacters from '../assets/characters.json';
 import { SmashCharacter } from '../types/SmashCharacter';
@@ -28,11 +28,15 @@ function charactersReducer(
 ): SmashCharacter[] {
   switch (action.type) {
     case 'UPDATE_CHARACTER':
+      localStorage.setItem(
+        action.character.id.toString(),
+        JSON.stringify(action.character)
+      );
       return state.map((oldChar) =>
         oldChar.id === action.character.id ? action.character : oldChar
       );
     case 'UPDATE_CHARACTERS':
-      return action.characters;
+      return [...action.characters];
     default:
       return state;
   }
@@ -43,6 +47,22 @@ export default function SmashDownPage({
 }: SmashDownPageProps): JSX.Element {
   const [state, dispatch] = useReducer(charactersReducer, characters);
 
+  useEffect(() => {
+    let foundCachedCharacter = false;
+    const preCacheState = [...characters];
+    characters.forEach((character, i) => {
+      const cachedItem = localStorage.getItem(character.id.toString());
+      if (cachedItem) {
+        foundCachedCharacter = true;
+        preCacheState[i] = JSON.parse(cachedItem);
+      }
+    });
+
+    if (foundCachedCharacter) {
+      dispatch({ type: 'UPDATE_CHARACTERS', characters: preCacheState });
+    }
+  }, [characters]);
+
   function randomize(n?: number) {
     if (typeof n === 'undefined') {
       dispatch({ type: 'UPDATE_CHARACTERS', characters });
@@ -50,8 +70,17 @@ export default function SmashDownPage({
     }
 
     const randomizedCharacters = shuffle(
-      characters.filter((c) => !c.disabled)
+      // TODO: yuck
+      characters.filter(
+        (c) => !state.find((statefulChar) => statefulChar.id === c.id)?.disabled
+      )
     ).slice(0, n);
+
+    if (randomizedCharacters.length < n) {
+      // TODO: error: disabled too many characters to provide n randomized
+      console.error('dumbass');
+    }
+
     dispatch({ type: 'UPDATE_CHARACTERS', characters: randomizedCharacters });
   }
 
@@ -67,9 +96,9 @@ export default function SmashDownPage({
         <Button onClick={() => randomize(9)}>9 rounds</Button>
         <Button onClick={() => randomize(15)}>15 rounds</Button>
         <Button onClick={() => randomize(21)}>21 rounds</Button>
-        <Button onClick={() => randomize()}>Max rounds</Button>
+        <Button onClick={() => randomize()}>Reset</Button>
       </div>
-      <div className="flex flex-row flex-grow max-w-6xl flex-wrap pl-4">
+      <div className="flex flex-row flex-grow max-w-6xl flex-wrap pl-4 justify-center">
         {state.map((character) => (
           <CharacterTile
             key={character.id}
