@@ -65,6 +65,8 @@ export default function SmashDownPage({
 
   function randomize(n?: number) {
     if (typeof n === 'undefined') {
+      // Reset
+      localStorage.clear();
       dispatch({ type: 'UPDATE_CHARACTERS', characters });
       return;
     }
