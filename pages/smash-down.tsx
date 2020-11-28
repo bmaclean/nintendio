@@ -100,7 +100,7 @@ export default function SmashDownPage({
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full mb-8">
+      <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full">
         <Button onClick={() => randomize(3)}>3 rounds</Button>
         <Button onClick={() => randomize(6)}>6 rounds</Button>
         <Button onClick={() => randomize(9)}>9 rounds</Button>
