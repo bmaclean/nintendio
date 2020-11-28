@@ -482,7 +482,8 @@
       "id": 54,
       "name": "Palutena",
       "thumbnail": "palutena.png",
-      "videoID": "0yD_B4ZkdME"
+      "videoID": "0yD_B4ZkdME",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -518,7 +519,8 @@
       "id": 58,
       "name": "Bowser Jr.",
       "thumbnail": "bowser-jr.png",
-      "videoID": "fZ2dm9EoJfE"
+      "videoID": "fZ2dm9EoJfE",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -563,7 +565,8 @@
       "id": 62,
       "name": "Corrin",
       "thumbnail": "corrin.png",
-      "videoID": "7B4w2Tsy9PE"
+      "videoID": "7B4w2Tsy9PE",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -572,7 +575,8 @@
       "id": 63,
       "name": "Bayonetta",
       "thumbnail": "bayonetta.png",
-      "videoID": "oYe8HpzYebg"
+      "videoID": "oYe8HpzYebg",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -644,7 +648,8 @@
       "id": 70,
       "name": "Piranha Plant",
       "thumbnail": "piranha-plant.png",
-      "videoID": "3sZsk8VHY2g"
+      "videoID": "3sZsk8VHY2g",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -653,7 +658,8 @@
       "id": 71,
       "name": "Joker",
       "thumbnail": "joker.png",
-      "videoID": "W4PG9qx9x2s"
+      "videoID": "W4PG9qx9x2s",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -662,7 +668,8 @@
       "id": 72,
       "name": "Hero",
       "thumbnail": "hero.png",
-      "videoID": "pupll3ON-WA"
+      "videoID": "pupll3ON-WA",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -670,7 +677,8 @@
       "franchise": "Banjo-Kazooie",
       "id": 73,
       "name": "Banjo & Kazooie",
-      "videoID": "qyJ4djjQOr0"
+      "videoID": "qyJ4djjQOr0",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -678,7 +686,8 @@
       "franchise": "Fatal Fury",
       "id": 74,
       "name": "Terry",
-      "videoID": "lvT-b5y9tsE"
+      "videoID": "lvT-b5y9tsE",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -686,7 +695,8 @@
       "franchise": "Fire Emblem",
       "id": 75,
       "name": "Byleth",
-      "videoID": "6fwAk1P8TLU"
+      "videoID": "6fwAk1P8TLU",
+      "disabled": true
     },
     {
       "alt": 0,
@@ -694,7 +704,8 @@
       "franchise": "Arms",
       "id": 76,
       "name": "Min Min",
-      "videoID": "dKR_w6C5A5k"
+      "videoID": "dKR_w6C5A5k",
+      "disabled": true
     },
     {
       "alt": 0,
