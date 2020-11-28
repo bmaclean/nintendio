@@ -93,14 +93,16 @@ export default function SmashDownPage({
         <h1 className="font-header text-7xl text-blue-900">Smash Down</h1>
         <hr className="border-blue-900 w-24" />
       </div>
-      <div className="flex items-center justify-center h-44 flex-col">
+      <div className="flex items-center justify-center flex-col mb-8">
         <input
           type="text"
+          className="opacity-50 bg-grey-300 rounded h-8 w-64 p-2"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          placeholder="Pablo's a bitch"
         />
       </div>
-      <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full">
+      <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full mb-8">
         <Button onClick={() => randomize(3)}>3 rounds</Button>
         <Button onClick={() => randomize(6)}>6 rounds</Button>
         <Button onClick={() => randomize(9)}>9 rounds</Button>
