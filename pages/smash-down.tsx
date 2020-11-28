@@ -110,7 +110,9 @@ export default function SmashDownPage({
       </div>
       <div className="flex flex-row flex-grow max-w-6xl flex-wrap pl-4 justify-center">
         {state
-          .filter((character) => character.name.includes(search))
+          .filter((character) =>
+            character.name.toLowerCase().includes(search.toLowerCase())
+          )
           .map((character) => (
             <CharacterTile
               key={character.id}
