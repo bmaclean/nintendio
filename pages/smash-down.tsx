@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { GetStaticProps } from 'next';
 import smashCharacters from '../assets/characters.json';
 import { SmashCharacter } from '../types/SmashCharacter';
@@ -46,6 +46,7 @@ export default function SmashDownPage({
   characters,
 }: SmashDownPageProps): JSX.Element {
   const [state, dispatch] = useReducer(charactersReducer, characters);
+  const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
     let foundCachedCharacter = false;
@@ -92,6 +93,13 @@ export default function SmashDownPage({
         <h1 className="font-header text-7xl text-blue-900">Smash Down</h1>
         <hr className="border-blue-900 w-24" />
       </div>
+      <div className="flex items-center justify-center h-44 flex-col">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
       <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full mb-8">
         <Button onClick={() => randomize(3)}>3 rounds</Button>
         <Button onClick={() => randomize(6)}>6 rounds</Button>
@@ -101,19 +109,21 @@ export default function SmashDownPage({
         <Button onClick={() => randomize()}>Reset</Button>
       </div>
       <div className="flex flex-row flex-grow max-w-6xl flex-wrap pl-4 justify-center">
-        {state.map((character) => (
-          <CharacterTile
-            key={character.id}
-            character={character}
-            className="mr-4 w-36 mb-4"
-            onDisableCharacter={(character) => {
-              dispatch({ type: 'UPDATE_CHARACTER', character });
-            }}
-            onAssignCharacter={(character) => {
-              dispatch({ type: 'UPDATE_CHARACTER', character });
-            }}
-          />
-        ))}
+        {state
+          .filter((character) => search && character.name.includes(search))
+          .map((character) => (
+            <CharacterTile
+              key={character.id}
+              character={character}
+              className="mr-4 w-36 mb-4"
+              onDisableCharacter={(character) => {
+                dispatch({ type: 'UPDATE_CHARACTER', character });
+              }}
+              onAssignCharacter={(character) => {
+                dispatch({ type: 'UPDATE_CHARACTER', character });
+              }}
+            />
+          ))}
       </div>
     </div>
   );
