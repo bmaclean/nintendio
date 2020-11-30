@@ -5,6 +5,7 @@ import { SmashCharacter } from '../types/SmashCharacter';
 import { CharacterTile } from '../components';
 import Button from '../components/Button';
 import shuffle from '../utils/shuffle';
+import { User } from '../types/User';
 
 interface SmashDownPageProps {
   characters: SmashCharacter[];
@@ -42,10 +43,35 @@ function charactersReducer(
   }
 }
 
+type UserReducerAction = {
+  type: 'ADD_USER' | 'UPDATE_USER';
+  user: User;
+};
+
+function usersReducer(state: User[], action: UserReducerAction): User[] {
+  switch (action.type) {
+    case 'ADD_USER':
+      localStorage.setItem(action.user.name, JSON.stringify(action.user));
+      return [...state, action.user];
+    case 'UPDATE_USER':
+      return [...state]; // TODO
+    default:
+      return state;
+  }
+}
+
+const COLOUR_OPTIONS = ['blue', 'red', 'green'];
+
 export default function SmashDownPage({
   characters,
 }: SmashDownPageProps): JSX.Element {
-  const [state, dispatch] = useReducer(charactersReducer, characters);
+  const [characterState, characterDispatch] = useReducer(
+    charactersReducer,
+    characters
+  );
+  const [userState, userDispatch] = useReducer(usersReducer, []);
+  const [addingUser, setAddingUser] = useState<boolean>(false);
+  const [userName, setUserName] = useState<string>('');
   const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
@@ -60,7 +86,10 @@ export default function SmashDownPage({
     });
 
     if (foundCachedCharacter) {
-      dispatch({ type: 'UPDATE_CHARACTERS', characters: preCacheState });
+      characterDispatch({
+        type: 'UPDATE_CHARACTERS',
+        characters: preCacheState,
+      });
     }
   }, [characters]);
 
@@ -68,14 +97,16 @@ export default function SmashDownPage({
     if (typeof n === 'undefined') {
       // Reset
       localStorage.clear();
-      dispatch({ type: 'UPDATE_CHARACTERS', characters });
+      characterDispatch({ type: 'UPDATE_CHARACTERS', characters });
       return;
     }
 
     const randomizedCharacters = shuffle(
       // TODO: yuck
       characters.filter(
-        (c) => !state.find((statefulChar) => statefulChar.id === c.id)?.disabled
+        (c) =>
+          !characterState.find((statefulChar) => statefulChar.id === c.id)
+            ?.disabled
       )
     ).slice(0, n * 3);
 
@@ -84,7 +115,10 @@ export default function SmashDownPage({
       console.error('dumbass');
     }
 
-    dispatch({ type: 'UPDATE_CHARACTERS', characters: randomizedCharacters });
+    characterDispatch({
+      type: 'UPDATE_CHARACTERS',
+      characters: randomizedCharacters,
+    });
   }
 
   return (
@@ -99,8 +133,55 @@ export default function SmashDownPage({
           className="opacity-50 bg-grey-300 rounded h-8 w-64 p-2"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Pablo's a bitch"
+          placeholder="search for a character"
         />
+      </div>
+      <div className="flex flex-row max-w-6xl flex-wrap justify-center items-center w-full mb-8">
+        {userState.map((user) => (
+          <div className="flex flex-row bg-blue-100 text-gray-900 rounded-md p-2 hover:bg-blue-200 mr-8 justify-center items-center">
+            <div
+              className={`bg-${user.colour}-500 mr-2 rounded-full h-4 w-4`}
+            ></div>
+            {user.name}
+          </div>
+        ))}
+        {addingUser && (
+          <div className="flex flex-col bg-blue-100 text-gray-900 rounded-md p-2 mr-8">
+            <input
+              type="text"
+              className="opacity-50 bg-grey-300 rounded h-8 w-42 p-2 mb-4"
+              value={userName}
+              placeholder="name"
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+            />
+            <Button
+              className="h-8"
+              onClick={() => {
+                setAddingUser(false);
+                userDispatch({
+                  type: 'ADD_USER',
+                  user: {
+                    name: userName,
+                    colour: COLOUR_OPTIONS[userState.length],
+                  },
+                });
+                setUserName('');
+              }}
+              style={{ padding: '2px' }}
+            >
+              Add
+            </Button>
+          </div>
+        )}
+        <Button
+          className="h-10 bg-blue-500 text-blue-50"
+          onClick={() => setAddingUser(true)}
+          style={{ border: 'none' }}
+        >
+          add a user +
+        </Button>
       </div>
       <div className="flex flex-row max-w-6xl flex-wrap justify-evenly w-full mb-8">
         <Button onClick={() => randomize(3)}>3 rounds</Button>
@@ -111,7 +192,7 @@ export default function SmashDownPage({
         <Button onClick={() => randomize()}>Reset</Button>
       </div>
       <div className="flex flex-row flex-grow max-w-6xl flex-wrap pl-4 justify-center">
-        {state
+        {characterState
           .filter((character) =>
             character.name.toLowerCase().includes(search.toLowerCase())
           )
@@ -120,11 +201,12 @@ export default function SmashDownPage({
               key={character.id}
               character={character}
               className="mr-4 w-36 mb-4"
+              userOptions={userState}
               onDisableCharacter={(character) => {
-                dispatch({ type: 'UPDATE_CHARACTER', character });
+                characterDispatch({ type: 'UPDATE_CHARACTER', character });
               }}
               onAssignCharacter={(character) => {
-                dispatch({ type: 'UPDATE_CHARACTER', character });
+                characterDispatch({ type: 'UPDATE_CHARACTER', character });
               }}
             />
           ))}
