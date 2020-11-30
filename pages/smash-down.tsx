@@ -77,7 +77,7 @@ export default function SmashDownPage({
       characters.filter(
         (c) => !state.find((statefulChar) => statefulChar.id === c.id)?.disabled
       )
-    ).slice(0, n);
+    ).slice(0, n * 3);
 
     if (randomizedCharacters.length < n) {
       // TODO: error: disabled too many characters to provide n randomized
