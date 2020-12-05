@@ -43,18 +43,34 @@ function charactersReducer(
   }
 }
 
+type SetUsersAction = {
+  type: 'SET_USERS';
+  users: User[];
+};
+
 type UserReducerAction = {
   type: 'ADD_USER' | 'UPDATE_USER' | 'DELETE_USER';
   user: User;
 };
 
-function usersReducer(state: User[], action: UserReducerAction): User[] {
+type UsersReductionAction = SetUsersAction | UserReducerAction;
+
+function usersReducer(state: User[], action: UsersReductionAction): User[] {
   switch (action.type) {
-    case 'ADD_USER':
+    case 'SET_USERS': {
+      return [...action.users];
+    }
+    case 'ADD_USER': {
+      const users = [...state, action.user];
       localStorage.setItem(action.user.name, JSON.stringify(action.user));
-      return [...state, action.user];
+      localStorage.setItem('users', JSON.stringify(users));
+      return users;
+    }
     case 'UPDATE_USER':
-      return [...state]; // TODO
+      localStorage.setItem(action.user.name, JSON.stringify(action.user));
+      return state.map((currentUser) =>
+        currentUser.name === action.user.name ? action.user : currentUser
+      );
     case 'DELETE_USER': {
       return [...state.filter((u) => u.name !== action.user.name)]; // TODO
     }
@@ -76,6 +92,14 @@ export default function SmashDownPage({
   const [addingUser, setAddingUser] = useState<boolean>(false);
   const [userName, setUserName] = useState<string>('');
   const [search, setSearch] = useState<string>('');
+
+  useEffect(() => {
+    const cachedUsers = localStorage.getItem('users');
+    if (cachedUsers) {
+      const users = JSON.parse(cachedUsers);
+      userDispatch({ type: 'SET_USERS', users });
+    }
+  }, []);
 
   useEffect(() => {
     let foundCachedCharacter = false;
@@ -145,18 +169,27 @@ export default function SmashDownPage({
             <div className="flex flex-row justify-center items-center">
               <div
                 className={`bg-${user.colour}-500 mr-2 rounded-full h-4 w-4`}
+              />
+              {user.name}{' '}
+              <div
+                className="font-lg text-red-800 ml-2 cursor-pointer select-none font-medium"
+                onClick={() => userDispatch({ type: 'DELETE_USER', user })}
               >
-                {user.name}{' '}
-                <div
-                  className="font-lg text-red-800 px-2 ml-2 cursor-pointer select-none font-medium"
-                  onClick={() => userDispatch({ type: 'DELETE_USER', user })}
-                >
-                  x
-                </div>
+                x
               </div>
             </div>
-            <div className="mt-1 flex flex-row justify-between">
-              <div>-</div>
+            <div className="mt-1 flex flex-row justify-between w-full">
+              <div
+                onClick={() =>
+                  userDispatch({
+                    type: 'UPDATE_USER',
+                    user: { ...user, wins: user.wins + 1 },
+                  })
+                }
+                className="cursor-pointer text-blue-500 select-none mr-auto"
+              >
+                -
+              </div>
               {user.wins || 0}
               <div
                 onClick={() =>
@@ -165,6 +198,7 @@ export default function SmashDownPage({
                     user: { ...user, wins: user.wins + 1 },
                   })
                 }
+                className="cursor-pointer text-blue-500 ml-auto select-none"
               >
                 +
               </div>
@@ -191,6 +225,7 @@ export default function SmashDownPage({
                   user: {
                     name: userName,
                     colour: COLOUR_OPTIONS[userState.length],
+                    wins: 0,
                   },
                 });
                 setUserName('');
