@@ -44,7 +44,7 @@ function charactersReducer(
 }
 
 type UserReducerAction = {
-  type: 'ADD_USER' | 'UPDATE_USER';
+  type: 'ADD_USER' | 'UPDATE_USER' | 'DELETE_USER';
   user: User;
 };
 
@@ -55,6 +55,9 @@ function usersReducer(state: User[], action: UserReducerAction): User[] {
       return [...state, action.user];
     case 'UPDATE_USER':
       return [...state]; // TODO
+    case 'DELETE_USER': {
+      return [...state.filter((u) => u.name !== action.user.name)]; // TODO
+    }
     default:
       return state;
   }
@@ -138,11 +141,34 @@ export default function SmashDownPage({
       </div>
       <div className="flex flex-row max-w-6xl flex-wrap justify-center items-center w-full mb-8">
         {userState.map((user) => (
-          <div className="flex flex-row bg-blue-100 text-gray-900 rounded-md p-2 hover:bg-blue-200 mr-8 justify-center items-center">
-            <div
-              className={`bg-${user.colour}-500 mr-2 rounded-full h-4 w-4`}
-            ></div>
-            {user.name}
+          <div className="flex flex-col bg-blue-100 text-gray-900 rounded-md p-2 hover:bg-blue-200 mr-8 justify-center items-center">
+            <div className="flex flex-row justify-center items-center">
+              <div
+                className={`bg-${user.colour}-500 mr-2 rounded-full h-4 w-4`}
+              >
+                {user.name}{' '}
+                <div
+                  className="font-lg text-red-800 px-2 ml-2 cursor-pointer select-none font-medium"
+                  onClick={() => userDispatch({ type: 'DELETE_USER', user })}
+                >
+                  x
+                </div>
+              </div>
+            </div>
+            <div className="mt-1 flex flex-row justify-between">
+              <div>-</div>
+              {user.wins || 0}
+              <div
+                onClick={() =>
+                  userDispatch({
+                    type: 'UPDATE_USER',
+                    user: { ...user, wins: user.wins + 1 },
+                  })
+                }
+              >
+                +
+              </div>
+            </div>
           </div>
         ))}
         {addingUser && (
