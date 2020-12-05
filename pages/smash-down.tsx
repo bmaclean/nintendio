@@ -183,7 +183,7 @@ export default function SmashDownPage({
                 onClick={() =>
                   userDispatch({
                     type: 'UPDATE_USER',
-                    user: { ...user, wins: user.wins + 1 },
+                    user: { ...user, wins: user.wins > 0 ? user.wins - 1 : 0 },
                   })
                 }
                 className="cursor-pointer text-blue-500 select-none mr-auto"
