@@ -6,7 +6,8 @@
       "id": 1,
       "name": "Mario",
       "thumbnail": "mario.png",
-      "videoID": "INk1W8OujQI"
+      "videoID": "INk1W8OujQI",
+      "classes": ["mario", "original"]
     },
     {
       "alt": 0,
@@ -15,7 +16,8 @@
       "id": 2,
       "name": "Donkey Kong",
       "thumbnail": "dk.png",
-      "videoID": "K7IsUGeFXP0"
+      "videoID": "K7IsUGeFXP0",
+      "classes": ["original"]
     },
     {
       "alt": 0,
@@ -24,7 +26,8 @@
       "id": 3,
       "name": "Link",
       "thumbnail": "link.png",
-      "videoID": "kfeUdBi67G4"
+      "videoID": "kfeUdBi67G4",
+      "classes": ["zelda", "sword", "ranged"]
     },
     {
       "alt": 0,
@@ -33,7 +36,8 @@
       "id": 4,
       "name": "Samus",
       "thumbnail": "samus.png",
-      "videoID": "I9tcvSeemVo"
+      "videoID": "I9tcvSeemVo",
+      "classes": ["original", "metroid", "ranged"]
     },
     {
       "alt": 0,
@@ -42,7 +46,8 @@
       "id": 4.1,
       "name": "Dark Samus",
       "thumbnail": "dark-samus.png",
-      "videoID": "sXG-oI6VChg"
+      "videoID": "sXG-oI6VChg",
+      "classes": ["metroid"]
     },
     {
       "alt": 0,
@@ -51,7 +56,8 @@
       "id": 5,
       "name": "Yoshi",
       "thumbnail": "yoshi.png",
-      "videoID": "bQsMQankmEs"
+      "videoID": "bQsMQankmEs",
+      "classes": ["mario"]
     },
     {
       "alt": 0,
@@ -60,7 +66,8 @@
       "id": 6,
       "name": "Kirby",
       "thumbnail": "kirby.png",
-      "videoID": "1FPJs_c3qY4"
+      "videoID": "1FPJs_c3qY4",
+      "classes": ["kirby"]
     },
     {
       "alt": 0,
@@ -69,7 +76,8 @@
       "id": 7,
       "name": "Fox",
       "thumbnail": "fox.png",
-      "videoID": "Arw6c0dJHAE"
+      "videoID": "Arw6c0dJHAE",
+      "classes": ["star fox"]
     },
     {
       "alt": 0,
@@ -78,7 +86,8 @@
       "id": 8,
       "name": "Pikachu",
       "thumbnail": "pikachu.png",
-      "videoID": "7LfEvnLc3mI"
+      "videoID": "7LfEvnLc3mI",
+      "classes": ["pokemon"]
     },
     {
       "alt": 0,
@@ -87,7 +96,8 @@
       "id": 9,
       "name": "Luigi",
       "thumbnail": "luigi.png",
-      "videoID": "LlNXKM3sHWU"
+      "videoID": "LlNXKM3sHWU",
+      "classes": ["mario"]
     },
     {
       "alt": 0,
@@ -96,7 +106,8 @@
       "id": 10,
       "name": "Ness",
       "thumbnail": "ness.png",
-      "videoID": "jtlUHmonMGQ"
+      "videoID": "jtlUHmonMGQ",
+      "classes": ["earthbound"]
     },
     {
       "alt": 0,
@@ -105,7 +116,8 @@
       "id": 11,
       "name": "Captain Falcon",
       "thumbnail": "captain-falcon.png",
-      "videoID": "ayUTQsO6d1E"
+      "videoID": "ayUTQsO6d1E",
+      "classes": ["f-zero"]
     },
     {
       "alt": 0,
@@ -114,7 +126,8 @@
       "id": 12,
       "name": "Jigglypuff",
       "thumbnail": "jigglypuff.png",
-      "videoID": "IlojAAwCfoA"
+      "videoID": "IlojAAwCfoA",
+      "classes": ["pokemon"]
     },
     {
       "alt": 0,
@@ -123,7 +136,8 @@
       "id": 13,
       "name": "Peach",
       "thumbnail": "peach.png",
-      "videoID": "ETVQLZV7J8g"
+      "videoID": "ETVQLZV7J8g",
+      "classes": ["earthbound"]
     },
     {
       "alt": 0,
@@ -132,7 +146,8 @@
       "id": 13.1,
       "name": "Daisy",
       "thumbnail": "daisy.png",
-      "videoID": "YyzJnpX2ZcY"
+      "videoID": "YyzJnpX2ZcY",
+      "classes": ["mario"]
     },
     {
       "alt": 0,
@@ -141,7 +156,8 @@
       "id": 14,
       "name": "Bowser",
       "thumbnail": "bowser.png",
-      "videoID": "liuwszyDhXM"
+      "videoID": "liuwszyDhXM",
+      "classes": ["mario", "heavy"]
     },
     {
       "alt": 0,
@@ -150,7 +166,8 @@
       "id": 15,
       "name": "Ice Climbers",
       "thumbnail": "ice-climbers.png",
-      "videoID": "FUzcsIjn4LY"
+      "videoID": "FUzcsIjn4LY",
+      "classes": []
     },
     {
       "alt": 0,
@@ -159,7 +176,8 @@
       "id": 16,
       "name": "Sheik",
       "thumbnail": "sheik.png",
-      "videoID": "cCQXBEiARns"
+      "videoID": "cCQXBEiARns",
+      "classes": ["zelda"]
     },
     {
       "alt": 0,
@@ -168,7 +186,8 @@
       "id": 17,
       "name": "Zelda",
       "thumbnail": "zelda.png",
-      "videoID": "fMDgFn3qQ_c"
+      "videoID": "fMDgFn3qQ_c",
+      "classes": ["zelda", "ranged"]
     },
     {
       "alt": 0,
@@ -177,7 +196,8 @@
       "id": 18,
       "name": "Dr. Mario",
       "thumbnail": "dr-mario.png",
-      "videoID": "w0qVpaEtEF4"
+      "videoID": "w0qVpaEtEF4",
+      "classes": ["mario"]
     },
     {
       "alt": 0,
@@ -186,7 +206,8 @@
       "id": 19,
       "name": "Pichu",
       "thumbnail": "pichu.png",
-      "videoID": "9ZD89yfBCyE"
+      "videoID": "9ZD89yfBCyE",
+      "classes": ["pokemon"]
     },
     {
       "alt": 0,
@@ -195,7 +216,8 @@
       "id": 20,
       "name": "Falco",
       "thumbnail": "falco.png",
-      "videoID": "rJj9J5MW8xg"
+      "videoID": "rJj9J5MW8xg",
+      "classes": ["star fox"]
     },
     {
       "alt": 0,
@@ -204,7 +226,8 @@
       "id": 21,
       "name": "Marth",
       "thumbnail": "marth.png",
-      "videoID": "icuBIlBPYj0"
+      "videoID": "icuBIlBPYj0",
+      "classes": ["fire emblem", "sword"]
     },
     {
       "alt": 0,
@@ -213,7 +236,8 @@
       "id": 21.1,
       "name": "Lucina",
       "thumbnail": "lucina.png",
-      "videoID": "vQqvKaCne4k"
+      "videoID": "vQqvKaCne4k",
+      "classes": ["fire emblem", "sword"]
     },
     {
       "alt": 0,
@@ -222,7 +246,8 @@
       "id": 22,
       "name": "Young Link",
       "thumbnail": "young-link.png",
-      "videoID": "qpzDPfCzB7g"
+      "videoID": "qpzDPfCzB7g",
+      "classes": ["zelda", "sword"]
     },
     {
       "alt": 0,
@@ -231,7 +256,8 @@
       "id": 23,
       "name": "Ganondorf",
       "thumbnail": "ganondorf.png",
-      "videoID": "Q7pzoLQlrsM"
+      "videoID": "Q7pzoLQlrsM",
+      "classes": ["zelda", "heavy"]
     },
     {
       "alt": 0,
@@ -240,7 +266,8 @@
       "id": 24,
       "name": "Mewtwo",
       "thumbnail": "mewtwo.png",
-      "videoID": "BcCpZHVIv9Q"
+      "videoID": "BcCpZHVIv9Q",
+      "classes": ["pokemon", "heavy"]
     },
     {
       "alt": 0,
@@ -249,7 +276,8 @@
       "id": 25,
       "name": "Roy",
       "thumbnail": "roy.png",
-      "videoID": "FtDn6HBn_Qk"
+      "videoID": "FtDn6HBn_Qk",
+      "classes": ["fire emblem", "sword"]
     },
     {
       "alt": 0,
@@ -258,7 +286,8 @@
       "id": 25.1,
       "name": "Chrom",
       "thumbnail": "chrom.png",
-      "videoID": "733o521fbdE"
+      "videoID": "733o521fbdE",
+      "classes": ["fire emblem", "sword"]
     },
     {
       "alt": 0,
@@ -267,7 +296,8 @@
       "id": 26,
       "name": "Mr. Game & Watch",
       "thumbnail": "game-and-watch.png",
-      "videoID": "Ic0xR07DhSY"
+      "videoID": "Ic0xR07DhSY",
+      "classes": []
     },
     {
       "alt": 0,
@@ -276,7 +306,8 @@
       "id": 27,
       "name": "Meta Knight",
       "thumbnail": "meta-knight.png",
-      "videoID": "A99IYmm50RY"
+      "videoID": "A99IYmm50RY",
+      "classes": ["kirby"]
     },
     {
       "alt": 0,
@@ -285,7 +316,8 @@
       "id": 28,
       "name": "Pit",
       "thumbnail": "pit.png",
-      "videoID": "M_Pszs9I7S4"
+      "videoID": "M_Pszs9I7S4",
+      "classes": ["ranged", "sword"]
     },
     {
       "alt": 0,
@@ -294,7 +326,8 @@
       "id": 28.1,
       "name": "Dark Pit",
       "thumbnail": "dark-pit.png",
-      "videoID": "q2hJjyP8FGA"
+      "videoID": "q2hJjyP8FGA",
+      "classes": ["ranged", "sword"]
     },
     {
       "alt": 0,
@@ -303,7 +336,8 @@
       "id": 29,
       "name": "Zero Suit Samus",
       "thumbnail": "zero-suit-samus.png",
-      "videoID": "Y4PTxiq11Fk"
+      "videoID": "Y4PTxiq11Fk",
+      "classes": ["metroid"]
     },
     {
       "alt": 0,
@@ -312,7 +346,8 @@
       "id": 30,
       "name": "Wario",
       "thumbnail": "wario.png",
-      "videoID": "4lK7zkTInNA"
+      "videoID": "4lK7zkTInNA",
+      "classes": ["mario", "heavy"]
     },
     {
       "alt": 0,
@@ -321,7 +356,8 @@
       "id": 31,
       "name": "Snake",
       "thumbnail": "snake.png",
-      "videoID": "7NLKrPYYQt0"
+      "videoID": "7NLKrPYYQt0",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -330,7 +366,8 @@
       "id": 32,
       "name": "Ike",
       "thumbnail": "ike.png",
-      "videoID": "-aV6h3jWO6c"
+      "videoID": "-aV6h3jWO6c",
+      "classes": ["fire emblem", "sword"]
     },
     {
       "alt": 0,
@@ -339,7 +376,8 @@
       "id": 33,
       "name": "Pokemon Trainer",
       "thumbnail": "pokemon-trainer.png",
-      "videoID": "dYpf9FoPN_M"
+      "videoID": "dYpf9FoPN_M",
+      "classes": ["pokemon"]
     },
     {
       "alt": 0,
@@ -348,7 +386,8 @@
       "id": 36,
       "name": "Diddy Kong",
       "thumbnail": "diddy-kong.png",
-      "videoID": "AjywYr-fuqY"
+      "videoID": "AjywYr-fuqY",
+      "classes": []
     },
     {
       "alt": 0,
@@ -357,7 +396,8 @@
       "id": 37,
       "name": "Lucas",
       "thumbnail": "lucas.png",
-      "videoID": "GWjfyyGNL8c"
+      "videoID": "GWjfyyGNL8c",
+      "classes": ["earthbound", "ranged"]
     },
     {
       "alt": 0,
@@ -366,7 +406,8 @@
       "id": 38,
       "name": "Sonic",
       "thumbnail": "sonic.png",
-      "videoID": "138MW7zOw0M"
+      "videoID": "138MW7zOw0M",
+      "classes": []
     },
     {
       "alt": 0,
@@ -374,7 +415,8 @@
       "franchise": "Kirby",
       "id": 39,
       "name": "King Dedede",
-      "videoID": "bikxqlRPN64"
+      "videoID": "bikxqlRPN64",
+      "classes": ["kirby"]
     },
     {
       "alt": 0,
@@ -383,7 +425,8 @@
       "id": 40,
       "name": "Olimar",
       "thumbnail": "olimar.png",
-      "videoID": "AFHgO8rMzcg"
+      "videoID": "AFHgO8rMzcg",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -392,7 +435,8 @@
       "id": 41,
       "name": "Lucario",
       "thumbnail": "lucario.png",
-      "videoID": "7gfpUgrLEwo"
+      "videoID": "7gfpUgrLEwo",
+      "classes": ["pokemon"]
     },
     {
       "alt": 0,
@@ -401,7 +445,8 @@
       "id": 42,
       "name": "R.O.B.",
       "thumbnail": "rob.png",
-      "videoID": "NqL7m9CuGD0"
+      "videoID": "NqL7m9CuGD0",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -410,7 +455,8 @@
       "id": 43,
       "name": "Toon Link",
       "thumbnail": "toon-link.png",
-      "videoID": "62uBiZfw9w0"
+      "videoID": "62uBiZfw9w0",
+      "classes": ["zelda", "sword", "ranged"]
     },
     {
       "alt": 0,
@@ -419,7 +465,8 @@
       "id": 44,
       "name": "Wolf",
       "thumbnail": "wolf.png",
-      "videoID": "YLG2LGY95f4"
+      "videoID": "YLG2LGY95f4",
+      "classes": ["ranged", "star fox"]
     },
     {
       "alt": 0,
@@ -428,7 +475,8 @@
       "id": 45,
       "name": "Villager",
       "thumbnail": "villager.png",
-      "videoID": "wY_wCijU1Pk"
+      "videoID": "wY_wCijU1Pk",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -437,7 +485,8 @@
       "id": 46,
       "name": "Mega Man",
       "thumbnail": "megaman.png",
-      "videoID": "m4632ulEnNc"
+      "videoID": "m4632ulEnNc",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -446,7 +495,8 @@
       "id": 47,
       "name": "Wii Fit Trainer",
       "thumbnail": "wii-fit-trainer.png",
-      "videoID": "kJbHRv4nCBw"
+      "videoID": "kJbHRv4nCBw",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -455,7 +505,8 @@
       "id": 48,
       "name": "Rosalina & Luma",
       "thumbnail": "rosalina.png",
-      "videoID": "JX2mySkglVU"
+      "videoID": "JX2mySkglVU",
+      "classes": ["mario"]
     },
     {
       "alt": 0,
@@ -464,7 +515,8 @@
       "id": 49,
       "name": "Little Mac",
       "thumbnail": "little-mac.png",
-      "videoID": "vBM09wj8xwE"
+      "videoID": "vBM09wj8xwE",
+      "classes": []
     },
     {
       "alt": 0,
@@ -473,7 +525,8 @@
       "id": 50,
       "name": "Greninja",
       "thumbnail": "greninja.png",
-      "videoID": "rMCn8NuATaE"
+      "videoID": "rMCn8NuATaE",
+      "classes": ["pokemon"]
     },
     {
       "alt": 0,
@@ -482,7 +535,8 @@
       "id": 54,
       "name": "Palutena",
       "thumbnail": "palutena.png",
-      "videoID": "0yD_B4ZkdME"
+      "videoID": "0yD_B4ZkdME",
+      "classes": ["sword", "ranged"]
     },
     {
       "alt": 0,

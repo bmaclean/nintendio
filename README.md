@@ -1,3 +1,3 @@
 # Nintendio
 
-A set of web apps for managing online Nintendo game formats.
+A collection of web apps for managing online Nintendo game formats.
