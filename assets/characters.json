@@ -545,7 +545,8 @@
       "id": 55,
       "name": "Pac-Man",
       "thumbnail": "pacman.png",
-      "videoID": "NPzo-TuH0C0"
+      "videoID": "NPzo-TuH0C0",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -554,7 +555,8 @@
       "id": 56,
       "name": "Robin",
       "thumbnail": "robin.png",
-      "videoID": "QBxtnTgUwcM"
+      "videoID": "QBxtnTgUwcM",
+      "classes": ["ranged", "sword"]
     },
     {
       "alt": 0,
@@ -563,7 +565,8 @@
       "id": 57,
       "name": "Shulk",
       "thumbnail": "shulk.png",
-      "videoID": "XWeR6XmzZyI"
+      "videoID": "XWeR6XmzZyI",
+      "classes": ["sword"]
     },
     {
       "alt": 0,
@@ -572,7 +575,8 @@
       "id": 58,
       "name": "Bowser Jr.",
       "thumbnail": "bowser-jr.png",
-      "videoID": "fZ2dm9EoJfE"
+      "videoID": "fZ2dm9EoJfE",
+      "classes": ["ranged", "mario"]
     },
     {
       "alt": 0,
@@ -581,7 +585,8 @@
       "id": 59,
       "name": "Duck Hunt",
       "thumbnail": "duck-hunt.png",
-      "videoID": "anhjSVXYL6E"
+      "videoID": "anhjSVXYL6E",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -590,7 +595,8 @@
       "id": 60,
       "name": "Ryu",
       "thumbnail": "ryu.png",
-      "videoID": "9LAjpoI-ap8"
+      "videoID": "9LAjpoI-ap8",
+      "classes": []
     },
     {
       "alt": 0,
@@ -599,7 +605,8 @@
       "id": 60.1,
       "name": "Ken",
       "thumbnail": "ken.png",
-      "videoID": "9_tQRugeXik"
+      "videoID": "9_tQRugeXik",
+      "classes": []
     },
     {
       "alt": 0,
@@ -608,7 +615,8 @@
       "id": 61,
       "name": "Cloud",
       "thumbnail": "cloud.png",
-      "videoID": "hccjmuujoD4"
+      "videoID": "hccjmuujoD4",
+      "classes": ["sword"]
     },
     {
       "alt": 0,
@@ -617,7 +625,8 @@
       "id": 62,
       "name": "Corrin",
       "thumbnail": "corrin.png",
-      "videoID": "7B4w2Tsy9PE"
+      "videoID": "7B4w2Tsy9PE",
+      "classes": ["sword", "fire emblem"]
     },
     {
       "alt": 0,
@@ -626,7 +635,8 @@
       "id": 63,
       "name": "Bayonetta",
       "thumbnail": "bayonetta.png",
-      "videoID": "oYe8HpzYebg"
+      "videoID": "oYe8HpzYebg",
+      "classes": []
     },
     {
       "alt": 0,
@@ -635,7 +645,8 @@
       "id": 64,
       "name": "Inkling",
       "thumbnail": "inkling.png",
-      "videoID": "O4-7-bJWUsc"
+      "videoID": "O4-7-bJWUsc",
+      "classes": []
     },
     {
       "alt": 0,
@@ -644,7 +655,8 @@
       "id": 65,
       "name": "Ridley",
       "thumbnail": "ridley.png",
-      "videoID": "EDi1Zf_vJsY"
+      "videoID": "EDi1Zf_vJsY",
+      "classes": ["heavy"]
     },
     {
       "alt": 0,
@@ -653,7 +665,8 @@
       "id": 66,
       "name": "Simon",
       "thumbnail": "simon.png",
-      "videoID": "RY7WL-n1atg"
+      "videoID": "RY7WL-n1atg",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -662,7 +675,8 @@
       "id": 66.1,
       "name": "Richter",
       "thumbnail": "richter.png",
-      "videoID": "ELrWbGScgwU"
+      "videoID": "ELrWbGScgwU",
+      "classes": ["ranged"]
     },
     {
       "alt": 0,
@@ -671,7 +685,8 @@
       "id": 67,
       "name": "King K. Rool",
       "thumbnail": "k-rool.png",
-      "videoID": "pKcXgSV8PTE"
+      "videoID": "pKcXgSV8PTE",
+      "classes": ["heavy", "ranged"]
     },
     {
       "alt": 0,
@@ -680,7 +695,8 @@
       "id": 68,
       "name": "Isabelle",
       "thumbnail": "isabelle.png",
-      "videoID": "ML8fn3eInnc"
+      "videoID": "ML8fn3eInnc",
+      "classes": []
     },
     {
       "alt": 0,
@@ -689,7 +705,8 @@
       "id": 69,
       "name": "Incineroar",
       "thumbnail": "incineroar.png",
-      "videoID": "eE6Agn9d89U"
+      "videoID": "eE6Agn9d89U",
+      "classes": ["heavy", "pokemon"]
     },
     {
       "alt": 0,
@@ -699,7 +716,8 @@
       "name": "Piranha Plant",
       "thumbnail": "piranha-plant.png",
       "videoID": "3sZsk8VHY2g",
-      "disabled": true
+      "disabled": true,
+      "classes": ["mario"]
     },
     {
       "alt": 0,
@@ -709,7 +727,8 @@
       "name": "Joker",
       "thumbnail": "joker.png",
       "videoID": "W4PG9qx9x2s",
-      "disabled": true
+      "disabled": true,
+      "classes": []
     },
     {
       "alt": 0,
@@ -719,7 +738,8 @@
       "name": "Hero",
       "thumbnail": "hero.png",
       "videoID": "pupll3ON-WA",
-      "disabled": true
+      "disabled": true,
+      "classes": []
     },
     {
       "alt": 0,
@@ -728,7 +748,8 @@
       "id": 73,
       "name": "Banjo & Kazooie",
       "videoID": "qyJ4djjQOr0",
-      "disabled": true
+      "disabled": true,
+      "classes": []
     },
     {
       "alt": 0,
@@ -737,7 +758,8 @@
       "id": 74,
       "name": "Terry",
       "videoID": "lvT-b5y9tsE",
-      "disabled": true
+      "disabled": true,
+      "classes": []
     },
     {
       "alt": 0,
@@ -746,7 +768,8 @@
       "id": 75,
       "name": "Byleth",
       "videoID": "6fwAk1P8TLU",
-      "disabled": true
+      "disabled": true,
+      "classes": ["fire emblem", "sword"]
     },
     {
       "alt": 0,
@@ -755,7 +778,8 @@
       "id": 76,
       "name": "Min Min",
       "videoID": "dKR_w6C5A5k",
-      "disabled": true
+      "disabled": true,
+      "classes": []
     },
     {
       "alt": 0,
@@ -764,7 +788,8 @@
       "id": 51,
       "name": "Mii Brawler",
       "thumbnail": "mii-brawler.png",
-      "videoID": "qdSKO-mc2n8"
+      "videoID": "qdSKO-mc2n8",
+      "classes": []
     },
     {
       "alt": 0,
@@ -773,7 +798,8 @@
       "id": 52,
       "name": "Mii Swordfighter",
       "thumbnail": "mii-swordfighter.png",
-      "videoID": "qdSKO-mc2n8"
+      "videoID": "qdSKO-mc2n8",
+      "classes": ["sword"]
     },
     {
       "alt": 0,
@@ -782,6 +808,7 @@
       "id": 53,
       "name": "Mii Gunner",
       "thumbnail": "mii-gunner.png",
-      "videoID": "qdSKO-mc2n8"
+      "videoID": "qdSKO-mc2n8",
+      "classes": ["ranged"]
     }
   ]
