@@ -55,6 +55,15 @@ type UserReducerAction = {
 
 type UsersReductionAction = SetUsersAction | UserReducerAction;
 
+const characterClasses = [
+  'ranged',
+  'sword',
+  'heavy',
+  'mario',
+  'fire emblem',
+  'pokemon',
+];
+
 function usersReducer(state: User[], action: UsersReductionAction): User[] {
   switch (action.type) {
     case 'SET_USERS': {
@@ -148,6 +157,17 @@ export default function SmashDownPage({
     });
   }
 
+  function filterByClass(characterClass: string) {
+    const classedCharacters = characters.filter((character) =>
+      character.classes.includes(characterClass)
+    );
+
+    characterDispatch({
+      type: 'UPDATE_CHARACTERS',
+      characters: classedCharacters,
+    });
+  }
+
   return (
     <div className="flex flex-col justify-center items-center w-screen bg-gradient-to-r from-blue-100 to-blue-200 pb-16 min-h-screen">
       <div className="flex items-center justify-center h-44 flex-col">
@@ -162,6 +182,15 @@ export default function SmashDownPage({
           onChange={(e) => setSearch(e.target.value)}
           placeholder="search for a character"
         />
+        <select
+          className="mt-4"
+          onChange={(e) => filterByClass(e.target.value)}
+        >
+          <option value={0}> </option>
+          {characterClasses.map((charClass) => (
+            <option value={charClass}>{charClass}</option>
+          ))}
+        </select>
       </div>
       <div className="flex flex-row max-w-6xl flex-wrap justify-center items-center w-full mb-8">
         {userState.map((user) => (

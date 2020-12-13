@@ -6,4 +6,5 @@ export type SmashCharacter = {
   thumbnail: string;
   disabled?: boolean;
   selected?: boolean;
+  classes?: string[];
 };
