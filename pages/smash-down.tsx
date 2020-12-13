@@ -248,6 +248,7 @@ export default function SmashDownPage({
         <Button onClick={() => randomize(3)}>3 rounds</Button>
         <Button onClick={() => randomize(6)}>6 rounds</Button>
         <Button onClick={() => randomize(9)}>9 rounds</Button>
+        <Button onClick={() => randomize(12)}>12 rounds</Button>
         <Button onClick={() => randomize(15)}>15 rounds</Button>
         <Button onClick={() => randomize(21)}>21 rounds</Button>
         <Button onClick={() => randomize()}>Reset</Button>
