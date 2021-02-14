@@ -139,14 +139,14 @@ export default function SmashDownPage({
 
     const randomizedCharacters = shuffle(
       // TODO: yuck
-      characters
-        .filter(
-          (c) =>
-            !characterState.find((statefulChar) => statefulChar.id === c.id)
-              ?.disabled
-        )
-        .sort((a, b) => (a.id > b.id ? -1 : 1))
-    ).slice(0, n * 3);
+      characters.filter(
+        (c) =>
+          !characterState.find((statefulChar) => statefulChar.id === c.id)
+            ?.disabled
+      )
+    )
+      .slice(0, n * 3)
+      .sort((a, b) => (a.id > b.id ? -1 : 1));
 
     if (randomizedCharacters.length < n) {
       // TODO: error: disabled too many characters to provide n randomized
