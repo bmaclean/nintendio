@@ -146,7 +146,7 @@ export default function SmashDownPage({
       )
     )
       .slice(0, n * 3)
-      .sort((a, b) => (a.id > b.id ? -1 : 1));
+      .sort((a, b) => (a.id > b.id ? 1 : -1));
 
     if (randomizedCharacters.length < n) {
       // TODO: error: disabled too many characters to provide n randomized
